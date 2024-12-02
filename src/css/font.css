@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'NeoSansCyr-Regular';
+  src: url('./public/fonts/NeoSansCyr-Regular.eot');
+  src: url('./public/fonts/NeoSansCyr-Regular.eot?#iefix') format('embedded-opentype'),
+       url('./public/fonts/NeoSansCyr-Regular.woff2') format('woff2'),
+       url('./public/fonts/NeoSansCyr-Regular.woff') format('woff'),
+       url('./public/fonts/NeoSansCyr-Regular.ttf') format('truetype'),
+       url('./public/fonts/NeoSansCyr-Regular.svg#NeoSansCyr-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NeoSansCyr-Medium';
+  src: url('./public/fonts/NeoSansCyr-Medium.eot');
+  src: url('./public/fonts/NeoSansCyr-Medium.eot?#iefix') format('embedded-opentype'),
+       url('./public/fonts/NeoSansCyr-Medium.woff2') format('woff2'),
+       url('./public/fonts/NeoSansCyr-Medium.woff') format('woff'),
+       url('./public/fonts/NeoSansCyr-Medium.ttf') format('truetype'),
+       url('./public/fonts/NeoSansCyr-Medium.svg#NeoSansCyr-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
