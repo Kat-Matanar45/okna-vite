@@ -6,7 +6,9 @@ import 'swiper/css';
 
 import { modalTel } from './js/modalTel';
 import { sliderCarousel } from './js/sliderCarousel';
+import { serviceSlider } from './js/serviceSlider';
 
 modalTel();
 sliderCarousel();
+serviceSlider();
 
