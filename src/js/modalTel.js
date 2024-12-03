@@ -12,5 +12,12 @@ export const modalTel = () => {
     btnClose.addEventListener('click', () => {
         modalWindow.style.display = 'none';
         substrate.style.display = 'none';
+    });
+
+    substrate.addEventListener('click', (e) => {
+        if (!e.target.closest('.header-modal')) {
+            modalWindow.style.display = 'none';
+            substrate.style.display = 'none';
+        }
     })
 }
