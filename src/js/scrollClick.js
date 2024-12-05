@@ -10,5 +10,27 @@ export const scrollClick = () => {
                 block: "center",
                 inline: "start"
             })
+
+            btnScroll.style.display = 'none'
       });
+
+      window.addEventListener('scroll', () => {
+        const scrollTop = document.documentElement.scrollTop;
+        const clientWidth = document.documentElement.clientWidth;
+
+        if (clientWidth >= 576) {
+            if (scrollTop < 700) {
+                btnScroll.style.display = 'none'
+            } else {
+                btnScroll.style.display = 'block'
+            }
+        };
+        if (clientWidth < 576) {
+            if (scrollTop < 370) {
+                btnScroll.style.display = 'none'
+            } else {
+                btnScroll.style.display = 'block'
+            }
+        }   
+      })
 }
