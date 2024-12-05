@@ -793,6 +793,25 @@ p.services-image_mobile {
   transition: opacity 0.3s linear;
   -webkit-transition: opacity 0.3s linear;
 }
+
+.modal_document {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+
+.modal_document img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
 #contacts {
   background-color: #00902a;
   color: #fff;
@@ -1304,6 +1323,7 @@ p.services-image_mobile {
   #documents .col-sm-4:last-child .document-inner {
     margin-bottom: 0;
   }
+
   #footer {
     text-align: center;
   }

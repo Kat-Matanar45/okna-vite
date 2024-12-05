@@ -11,6 +11,7 @@ import { modalService } from './js/modalService';
 import { timer } from './js/timer';
 import { inputBan } from './js/inputBan';
 import { formFetch } from './js/formFetch';
+import { doki } from './js/doki';
 
 modalTel();
 sliderCarousel();
@@ -19,3 +20,4 @@ modalService();
 timer('09 december 2024');
 inputBan();
 formFetch();
+doki();
