@@ -6,20 +6,23 @@ export const calc = (metr) => {
     const calcTotal = document.querySelector('#calc-total');
     let totalPrice;
 
-    calcInput.addEventListener('input', (e) => {
-        e.target.value = e.target.value.replace(/[^\d]+/, '')
-    });
+    if (window.location.pathname === '/balkony.html') {
 
-    const price = () => {
-        totalPrice = Math.floor(metr * calcInput.value * calcType.value * calcMaterial.value);
-        calcTotal.value = totalPrice;
-    };
+        calcInput.addEventListener('input', (e) => {
+            e.target.value = e.target.value.replace(/[^\d]+/, '')
+        });
 
-    container.addEventListener('input', (e) => {
-        if((e.target == calcType) || (e.target == calcMaterial) || (e.target == calcInput)) {
-            if (calcType.value !== '' && calcMaterial.value !== '' && calcInput.value !== '') {
-                price();
-            } 
-        }  
-    })
+        const price = () => {
+            totalPrice = Math.floor(metr * calcInput.value * calcType.value * calcMaterial.value);
+            calcTotal.value = totalPrice;
+        };
+
+        container.addEventListener('input', (e) => {
+            if ((e.target == calcType) || (e.target == calcMaterial) || (e.target == calcInput)) {
+                if (calcType.value !== '' && calcMaterial.value !== '' && calcInput.value !== '') {
+                    price();
+                }
+            }
+        })
+    }
 }
