@@ -68,7 +68,6 @@ const one = () => {
 const two = () => {
     const updateSlides = () => {
         serviceBloks.forEach((block, index) => {
-                // Если индекс блока совпадает с двумя текущими слайдами, делаем их видимыми
                 if (index === currentSlide || index === (currentSlide + 1) % serviceBloks.length) {
                     block.style.display = 'block';
                 } else {
@@ -77,19 +76,14 @@ const two = () => {
             });
         };
         
-        // Инициализация - показываем первые два слайда
         updateSlides();
         
-        // Обработчик для кнопки "вперед"
         arrowNextSlide.addEventListener('click', () => {
-            // Увеличиваем индекс текущего слайда
             currentSlide = (currentSlide + 1) % serviceBloks.length;
             updateSlides();
         });
         
-        // Обработчик для кнопки "назад"
         arrowPrevSlide.addEventListener('click', () => {
-            // Уменьшаем индекс текущего слайда
             currentSlide = (currentSlide - 1 + serviceBloks.length) % serviceBloks.length;
             updateSlides();
         });

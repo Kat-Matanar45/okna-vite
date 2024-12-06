@@ -13,6 +13,7 @@ import { inputBan } from './js/inputBan';
 import { formFetch } from './js/formFetch';
 import { doki } from './js/doki';
 import { scrollClick } from './js/scrollClick';
+import { calc } from './js/calc';
 
 modalTel();
 sliderCarousel();
@@ -23,3 +24,4 @@ inputBan();
 formFetch();
 doki();
 scrollClick();
+calc();

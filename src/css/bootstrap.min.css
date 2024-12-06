@@ -944,7 +944,6 @@ address {
 .col-md-12,
 .col-lg-12 {
     position: relative;
-    min-height: 1px;
     padding-left: 10px;
     padding-right: 10px
 }
