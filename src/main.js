@@ -24,4 +24,4 @@ inputBan();
 formFetch();
 doki();
 scrollClick();
-calc();
+calc(100);
