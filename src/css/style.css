@@ -239,6 +239,7 @@ input.error {
   border: 0;
   background-color: #fff;
 }
+
 #navigation-fixed:after {
   position: absolute;
   z-index: 1030;

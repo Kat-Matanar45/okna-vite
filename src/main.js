@@ -14,6 +14,7 @@ import { formFetch } from './js/formFetch';
 import { doki } from './js/doki';
 import { scrollClick } from './js/scrollClick';
 import { calc } from './js/calc';
+import { comments } from './js/comments';
 
 modalTel();
 sliderCarousel();
@@ -25,3 +26,4 @@ formFetch();
 doki();
 scrollClick();
 calc(100);
+comments();
