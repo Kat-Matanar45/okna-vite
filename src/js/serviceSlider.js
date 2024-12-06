@@ -90,7 +90,6 @@ const two = () => {
 }
 
     const start = () => {
-        console.log(window.innerWidth);
         if (window.innerWidth < 576) {
             one()
         } else {
