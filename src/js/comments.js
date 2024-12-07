@@ -5,6 +5,9 @@ export const comments = () => {
     const elemComment = document.querySelectorAll('.comment-item');
     const loadingBlock = document.createElement('div');
     const usersArr = [];
+    let numberArr = [];
+    let currentIndex;
+    let excludedComments = [];
 
     const showLoading = () => {
         loadingBlock.classList.add('loading-block');
@@ -31,7 +34,7 @@ export const comments = () => {
     };
 
     const rotateComments = () => {
-        let currentIndex = Math.floor(Math.random() * usersArr.length); 
+        const randomIndex = Math.floor(Math.random() * numberArr.length); 
         const interval = 20000; 
 
         const imgAvatar = () => {
@@ -39,6 +42,8 @@ export const comments = () => {
                 usersArr[currentIndex].image = 'avatar.jpg'
             }
         };
+
+        currentIndex = numberArr[randomIndex];
 
         setInterval(() => {
             const firstComment = blokComment.firstElementChild;
@@ -56,7 +61,7 @@ export const comments = () => {
 
                 imgAvatar();
 
-                if (two == true) {
+                if (two == false) {
                     const newComment = document.createElement('div');
                     newComment.classList.add('comment-item');
                     newComment.classList.add('row');
@@ -79,7 +84,7 @@ export const comments = () => {
                     currentIndex = (currentIndex + 1) % usersArr.length; 
                 };
 
-                if (two == false) {
+                if (two == true) {
                     const newComment = document.createElement('div');
                     newComment.classList.add('comment-item');
                     newComment.classList.add('row');
@@ -123,6 +128,8 @@ export const comments = () => {
             .then(() => {
 
                 usersArr.forEach((user, index) => {
+                    numberArr.push(index);
+                    console.log(numberArr)
 
                     if (elemComment[index]) {
                         const comment = elemComment[index];
@@ -144,7 +151,15 @@ export const comments = () => {
                     }
                 });
 
+            excludedComments = numberArr.slice(0, 3); 
+            numberArr = numberArr.slice(3);
+
             rotateComments();
+
+            setTimeout(() => {
+                numberArr = numberArr.concat(excludedComments); 
+                excludedComments = []; 
+            }, 60000);
 
         });
     }, 10000);
