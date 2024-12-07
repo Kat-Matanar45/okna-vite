@@ -832,6 +832,17 @@ p.services-image_mobile {
 .margin-row {
   margin-bottom: 50px;
 }
+.loading-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.loading-image {
+  width: 100px;
+  height: 100px;
+}
 .contacts-cart a {
   text-decoration: none;
   color: #4f686e;
