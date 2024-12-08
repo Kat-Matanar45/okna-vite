@@ -49,9 +49,9 @@ export const comments = () => {
             const firstComment = blokComment.firstElementChild;
 
             if (firstComment) {
-                blokComment.removeChild(firstComment);
-
                 let two;
+
+                blokComment.removeChild(firstComment);
 
                 if (currentIndex % 2 == 0) {
                     two = false
@@ -117,7 +117,9 @@ export const comments = () => {
     }
 
     blokComment.style.display = 'none';
+
     showLoading();
+    
     setInterval(() => {
         loadingBlock.remove();
         blokComment.style.display = 'block';

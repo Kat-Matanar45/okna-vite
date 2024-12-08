@@ -8,14 +8,14 @@ export const calc = (metr) => {
 
     if (window.location.pathname === '/balkony.html') {
 
-        calcInput.addEventListener('input', (e) => {
-            e.target.value = e.target.value.replace(/[^\d]+/, '')
-        });
-
         const price = () => {
             totalPrice = Math.floor(metr * calcInput.value * calcType.value * calcMaterial.value);
             calcTotal.value = totalPrice;
         };
+
+        calcInput.addEventListener('input', (e) => {
+            e.target.value = e.target.value.replace(/[^\d]+/, '')
+        });
 
         container.addEventListener('input', (e) => {
             if ((e.target == calcType) || (e.target == calcMaterial) || (e.target == calcInput)) {

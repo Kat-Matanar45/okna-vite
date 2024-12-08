@@ -1,19 +1,39 @@
 import { animate } from "./helpers";
 
 export const doki = () => {
-    const container = document.querySelectorAll('.container')[9];
-    const elemContainer = container.querySelectorAll('.sertificate-document');
+    let container;
+
+    const elemContainer = document.querySelectorAll('.sertificate-document');
     const overlay = document.querySelector('.overlay');
 
     const addModal = () => {
         const newModal = document.createElement('div');
         newModal.classList.add('modal_document');
+
+        if (window.location.pathname === '/balkony.html') {
+            container = document.querySelectorAll('.container')[9];
+        } else {
+            container = document.querySelectorAll('.container')[10];
+        }
+
         container.insertAdjacentElement('afterend', newModal);
 
         const modalImg = document.createElement('img');
         modalImg.setAttribute('src', './images/documents/original/document4.jpg');
         newModal.append(modalImg);
     }
+
+    const modalDocumentClick = () => {
+        const modalDocument = document.querySelector('.modal_document');
+
+        modalDocument.addEventListener('click', (e) => { 
+            if (!e.target.closest('.modal_document img')) {
+                modalDocument.style.display = 'none';
+                overlay.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        });
+    };
 
     addModal();
 
@@ -43,13 +63,6 @@ export const doki = () => {
         })
     });
 
-    const modalDocument = document.querySelector('.modal_document');
+    modalDocumentClick();
 
-    modalDocument.addEventListener('click', (e) => { 
-        if (!e.target.closest('.modal_document img')) {
-            modalDocument.style.display = 'none';
-            overlay.style.display = 'none';
-            document.body.style.overflow = '';
-        }
-    });
 }
