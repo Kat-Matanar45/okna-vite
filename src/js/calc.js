@@ -18,7 +18,7 @@ export const calc = (metr) => {
         });
 
         container.addEventListener('input', (e) => {
-            if ((e.target == calcType) || (e.target == calcMaterial) || (e.target == calcInput)) {
+            if ((e.target === calcType) || (e.target === calcMaterial) || (e.target === calcInput)) {
                 if (calcType.value !== '' && calcMaterial.value !== '' && calcInput.value !== '') {
                     price();
                 }

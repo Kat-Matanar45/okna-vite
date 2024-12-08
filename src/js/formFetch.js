@@ -33,15 +33,31 @@ export const formFetch = () => {
     forms.forEach((form) => {
       const inputFio = form.querySelector('input[name="fio"]');
       const inputPhone = form.querySelector('input[name="phone"]');
+      const formBtn = form.querySelector('.form-horizontal button[type="submit"]');
+
+      const cleaning = () => {
+        setInterval(() => {
+          statusBlock.textContent = ''
+          formBtn.disabled = false;
+        }, 3000)
+      };
 
       form.addEventListener('submit', (e) => {
         e.preventDefault();
 
+        formBtn.disabled = true;
+
         e.target.append(statusBlock);
         statusBlokImg();
 
-        if ((inputFio.value == '') || (inputPhone.value == '')) {
+        if ((inputFio.value === '') || (inputPhone.value === '')) {
                 statusBlock.textContent = emptyText;
+                formBtn.disabled = true;
+
+                setTimeout (() => {
+                  formBtn.disabled = false;
+                }, 6000);  
+
         } else {
 
                 if (window.location.pathname === '/balkony.html') {
@@ -57,24 +73,24 @@ export const formFetch = () => {
                   }
                 }
 
-                senData(JSON.stringify(user))
+                  senData(JSON.stringify(user))
                   .then(data => {
-                    console.log(data)
                     statusBlock.textContent = successText;
                     inputFio.value = '';
                     inputPhone.value = '';
+                    formBtn.disabled = true;
+
+                    cleaning();
                   })
 
                   .catch(error => {
                     statusBlock.textContent = errorText;
+                    formBtn.disabled = true;
+
+                    cleaning();
                   })
               }
-
-        setInterval(() => {
-          statusBlock.textContent = ''
-        }, 3000)
-
-      })
+         })
     })
     
   } catch (error) {

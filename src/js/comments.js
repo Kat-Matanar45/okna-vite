@@ -53,7 +53,7 @@ export const comments = () => {
 
                 blokComment.removeChild(firstComment);
 
-                if (currentIndex % 2 == 0) {
+                if (currentIndex % 2 === 0) {
                     two = false
                 } else {
                     two = true
@@ -61,7 +61,7 @@ export const comments = () => {
 
                 imgAvatar();
 
-                if (two == false) {
+                if (two === false) {
                     const newComment = document.createElement('div');
                     newComment.classList.add('comment-item');
                     newComment.classList.add('row');
@@ -84,7 +84,7 @@ export const comments = () => {
                     currentIndex = (currentIndex + 1) % usersArr.length; 
                 };
 
-                if (two == true) {
+                if (two === true) {
                     const newComment = document.createElement('div');
                     newComment.classList.add('comment-item');
                     newComment.classList.add('row');
@@ -138,7 +138,7 @@ export const comments = () => {
                         const pAuthor = comment.querySelector('.text-normal');
                         const pComment = comment.querySelector('.text-comment');
 
-                        if (user.image != '') {
+                        if (user.image !== '') {
                             imgUser.setAttribute('src', `./public/images/users/${user.image}`);
                         } else {
                             imgUser.setAttribute('src', `./public/images/users/avatar.jpg`);
