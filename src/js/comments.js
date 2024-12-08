@@ -129,7 +129,6 @@ export const comments = () => {
 
                 usersArr.forEach((user, index) => {
                     numberArr.push(index);
-                    console.log(numberArr)
 
                     if (elemComment[index]) {
                         const comment = elemComment[index];

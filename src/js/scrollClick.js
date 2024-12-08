@@ -2,6 +2,8 @@ export const scrollClick = () => {
     const btnScroll = document.querySelector('.smooth-scroll');
     const blokOffer = document.querySelector('#offer');
 
+    btnScroll.style.display = 'none'
+
     btnScroll.addEventListener('click', (e) => {
             e.preventDefault();
 
